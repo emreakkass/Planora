@@ -109,15 +109,3 @@ npm run dev
 - [ ] 🤖 Doğal dil planlama için Gemini entegrasyonu
 
 ---
-
-## 📸 Ekran Görüntüleri
-
-<!-- Ekran görüntüleri eklenecek -->
-
----
-
-<div align="center">
-
-**Geliştirici:** Emre · Eğitim ve portfolyo amacıyla geliştirildi ❤️
-
-</div>
