@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Background with smooth rounded squircle -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle inner card border -->
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+  
+  <!-- Stylized "P" & Calendar Stream Motif -->
+  <!-- Left Pillar -->
+  <rect x="136" y="128" width="54" height="256" rx="27" fill="#ffffff"/>
+  
+  <!-- Top Loop of P with Flow Arc -->
+  <path d="M163 128 H276 C336 128 376 168 376 224 C376 280 336 320 276 320 H190" 
+        fill="none" stroke="url(#glowGrad)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+        
+  <!-- Academic / Calendar Star Accent -->
+  <circle cx="276" cy="224" r="28" fill="url(#accentGrad)"/>
+  
+  <!-- Forward Arrow Momentum indicator -->
+  <path d="M250 380 L350 380 M320 350 L350 380 L320 410" 
+        stroke="#ffffff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

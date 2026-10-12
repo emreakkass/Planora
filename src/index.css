@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color-scheme: light;
+
+    /* Replit Light Theme:
+       sayfa: #F9F6F1, kart: #FEFDFB, kenar menüsü: #243D3B, vurgu: #F1B45C, ana düğme: #325854, metin: #1F2F2D */
+    --bg-page: #F9F6F1;
+    --bg-card: #FEFDFB;
+    --sidebar-bg: #243D3B;
+    --sidebar-active-bg: #1A2F2D;
+    --accent: #F1B45C;
+    --accent-hover: #E5A447;
+    --btn-primary: #325854;
+    --btn-primary-hover: #264642;
+    --btn-primary-text: #FFFFFF;
+    --text-primary: #1F2F2D;
+    --text-secondary: #3E5452;
+    --text-muted: #667D7A;
+    --border-theme: #E5DFD3;
+    --border-card: #EBE5D9;
+    --border-light: #F3EEE3;
+
+    /* Semantic Risk */
+    --risk-low: #2D7A5C;
+    --risk-medium: #D9822B;
+    --risk-high: #D34538;
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    /* Replit Dark Theme:
+       sayfa: #182524, kart: #1F2D2C, kenar menüsü: #141F1E, vurgu: #EFBD67, metin: #F3EEE3, ana düğme: #EFBD67 */
+    --bg-page: #182524;
+    --bg-card: #1F2D2C;
+    --sidebar-bg: #141F1E;
+    --sidebar-active-bg: #0D1615;
+    --accent: #EFBD67;
+    --accent-hover: #F2C87A;
+    --btn-primary: #EFBD67;
+    --btn-primary-hover: #F3C77C;
+    --btn-primary-text: #182524;
+    --text-primary: #F3EEE3;
+    --text-secondary: #BAC8C6;
+    --text-muted: #849694;
+    --border-theme: #2A3C3A;
+    --border-card: #283B39;
+    --border-light: #213230;
+
+    /* Semantic Risk */
+    --risk-low: #34D399;
+    --risk-medium: #FBBF24;
+    --risk-high: #F87171;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+  }
+
+  .font-mono, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+    font-feature-settings: 'tnum' on, 'zero' on;
+  }
+}
+
+/* Custom Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 125, 122, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 125, 122, 0.65);
+}
+
+/* Saygı: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reusable Component Utilities */
+@layer components {
+  /* Ana Buton */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    background-color: var(--btn-primary);
+    color: var(--btn-primary-text);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    opacity: 0.93;
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* İkincil Buton */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-theme);
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    background-color: var(--border-light);
+  }
+
+  /* Standart Kart */
+  .card-surface {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 1rem;
+    transition: all 150ms ease;
+  }
+
+  /* Vurgu Rozeti */
+  .badge-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background-color: rgba(241, 180, 92, 0.18);
+    color: var(--accent);
+    border: 1px solid rgba(241, 180, 92, 0.35);
+  }
+  .dark .badge-accent {
+    background-color: rgba(239, 189, 103, 0.15);
+    color: #EFBD67;
+    border-color: rgba(239, 189, 103, 0.3);
+  }
+  .badge-indigo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    background-color: rgba(241, 180, 92, 0.18);
+    color: var(--accent);
+    border: 1px solid rgba(241, 180, 92, 0.35);
+  }
+}

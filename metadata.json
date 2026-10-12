@@ -1,0 +1,6 @@
+{
+  "name": "Planora - Akıllı Öğrenci Ders & Sınav Planlayıcı",
+  "description": "Üniversite öğrencileri için haftalık ders programı, boş zaman bulucu, aralıklı tekrar ve Pomodoro destekli akıllı ders ve sınav planlayıcısı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

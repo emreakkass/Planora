@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planora - Akıllı Öğrenci Ders & Sınav Planlayıcı</title>
+    <meta name="description" content="Haftalık ders programı, boş zaman bulucu, aralıklı tekrar ve Pomodoro destekli akıllı ders ve sınav planlayıcısı." />
+    <meta property="og:title" content="Planora - Akıllı Öğrenci Ders & Sınav Planlayıcı" />
+    <meta property="og:description" content="Haftalık ders programı, boş zaman bulucu, aralıklı tekrar ve Pomodoro destekli akıllı ders ve sınav planlayıcısı." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Planora" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Erken Tema Yükleme (Zero-Flicker FOUC Önleyici) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('planora_theme_v1');
+          if (!saved) {
+            var rawSettings = localStorage.getItem('planora_settings_v1');
+            if (rawSettings) {
+              try { saved = JSON.parse(rawSettings).theme; } catch (e) {}
+            }
+          }
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var isDark = saved === 'dark' || (saved === 'system' && prefersDark);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[var(--bg-page)] text-[var(--text-primary)] antialiased selection:bg-[var(--accent)] selection:text-[#182524] transition-colors duration-150">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
