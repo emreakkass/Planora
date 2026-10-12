@@ -2,8 +2,6 @@
 
 > Üniversite öğrencileri için ders programı, sınav ve ödev planlayıcı. Boş zamanlarını analiz edip çalışma bloklarını otomatik yerleştirir.
 
-![Planora ana ekran](docs/screenshots/bugun.png)
-
 ## Özellikler
 
 - **Bugünün çalışma akışı:** Ders programındaki boş zamanlara göre optimize edilmiş çalışma blokları. Uyanıklık saatleri ve 15 dakikadan kısa boşluklar hesaba katılır.
