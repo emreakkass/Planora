@@ -62,7 +62,6 @@
   <img src="https://img.shields.io/badge/Web_Crypto-Güvenlik-4F46E5?style=flat-square" />
 </p>
 
----
 
 
 <details>
